@@ -2,21 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-	<script>
-const letter = document.getElementById("flickerLetter");
-const offset = document.getElementById("flickerPosition");
-const span = document.querySelector("span");
-
-
-letter.addEventListener("input", function() {
-// For data-attributes
-  // span.setAttribute("data-flicker", this.value);
-	span.innerHTML = this.value;
-});
-
-offset.addEventListener("input", function() {
-	span.style.setProperty("--offset", this.value);
-});</script>
+	
     <style>
         /* Flicker effect CSS (from texteffects) */
         .text {
@@ -92,6 +78,21 @@ https://codepen.io/mandymichael/pen/OJGjXgO
 	<label for="flickerLetter">Offset</label>
 	<input type="text" id="flickerPosition" />
 </fieldset>
+<script>
+const letter = document.getElementById("flickerLetter");
+const offset = document.getElementById("flickerPosition");
+const span = document.querySelector("span");
 
+
+letter.addEventListener("input", function() {
+// For data-attributes
+  // span.setAttribute("data-flicker", this.value);
+	span.innerHTML = this.value;
+});
+
+offset.addEventListener("input", function() {
+	span.style.setProperty("--offset", this.value);
+});
+</script>
 </body>
 </html>

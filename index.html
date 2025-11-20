@@ -105,7 +105,7 @@
 <!-- Tutorial:  https://texteffects.dev/posts/flickering-text-effect -->
 
 <div class="centered">
-	<h1 class="text glow" data-flicker="i">
+	<h1 id="cycleText" class="text glow" data-flicker="i">
 		WELCOME TO 7418
 	</h1>
 </div>
@@ -117,9 +117,17 @@ https://codepen.io/mandymichael/pen/OJGjXgO
 -->
 
 <script>
+const words = ["WELCOME", "HELLO", "7418", "ENJOY YOUR STAY"];
 const letter = document.getElementById("flickerLetter");
 const offset = document.getElementById("flickerPosition");
 const span = document.querySelector("span");
+
+let index = 0;
+
+setInterval(() => {
+    index = (index + 1) % words.length;  
+    document.getElementById("cycleText").textContent = words[index];
+}, 1500); // change word every 1.5 seconds
 
 
 letter.addEventListener("input", function() {

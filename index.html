@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
 	
     <style>
+        .navbar {
+    width: 100%;
+    background: #111;
+    padding: 15px 20px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    border-bottom: 2px solid #0ff; /* neon-style */
+    position: fixed; /* stays at top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #0ff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: monospace;
+    font-weight: 700;
+}
+
+.navbar a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #0ff;
+}
+
         /* Flicker and Glow effect CSS (from texteffects) or something*/
         .text {
             font-family: monospace;
@@ -65,6 +92,15 @@
 
 </head>
 <body>
+
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+
 
 <!-- Tutorial:  https://texteffects.dev/posts/flickering-text-effect -->
 

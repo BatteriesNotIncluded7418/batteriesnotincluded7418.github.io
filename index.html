@@ -62,6 +62,13 @@
 		.centered {
             text-align: center;
 }
+        .text-container {
+        width: 100%;
+        text-align: center;
+        height: 150px; /* set to match your big text's height */
+        overflow: hidden; /* prevents shadows from affecting layout */
+        }
+
         .glow {
    			color: #fff;
     		text-shadow:
@@ -128,7 +135,7 @@
 <!-- Tutorial:  https://texteffects.dev/posts/flickering-text-effect -->
 
 <div class="centered header-section full-width-section">
-	<h1 id="cycleText" class="text glow" data-flicker="i">
+	<h1 id="cycleText" class="text glow text-container" data-flicker="i">
 		Welcome to 7418's website
 	</h1>
 </div>

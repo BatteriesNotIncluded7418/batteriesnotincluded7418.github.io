@@ -6,7 +6,7 @@
     <style>
         .navbar {
     width: 100%;
-    background: #111;
+    background: #272727;
     padding: 15px 20px;
     display: flex;
     gap: 25px;
@@ -30,7 +30,14 @@
     color: #fff;
     text-shadow: 0 0 10px #0ff;
 }
-
+        .header-section {
+            background-color: black;
+            padding-bottom: 40px;
+        }
+        .white-section {
+            background-color: white;
+            min-height: 100vh;
+        }
         /* Flicker and Glow effect CSS (from texteffects) or something*/
         .text {
             font-family: monospace;
@@ -65,7 +72,7 @@
         }
 
         body {
-            background: #696969;
+            background: #272727;
             color: #fff;
             font-family: sans-serif;
             padding: 20px;
@@ -111,12 +118,17 @@
 
 <!-- Tutorial:  https://texteffects.dev/posts/flickering-text-effect -->
 
-<div class="centered">
+<div class="centered header-section">
 	<h1 id="cycleText" class="text glow" data-flicker="i">
 		Welcome to 7418's website
 	</h1>
 </div>
 
+<div class="white-section">
+    <h2>
+        Who are we? (TEO I NEED A PICTURE) 
+    </h2>
+</div>
 <!-- Read up on why I don't use pseudo-elements, data attributes and the css content property, tldr it has accessibility issues. I've left the css in the code for when it is eventually supported, but for now the separate span is the most accessible option https://textlab.dev/posts/data-attributes-and-text-effects-->
 
 <!-- The div isnt really needed its just because this setup made it easier for me for editability, option without div and nested span here

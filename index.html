@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-	
+    
     <style>
         .navbar {
     width: 100%;
@@ -11,8 +11,8 @@
     display: flex;
     gap: 25px;
     align-items: center;
-    border-bottom: 2px solid #0ff; /* neon-style */
-    position: fixed; /* stays at top */
+    border-bottom: 2px solid #0ff;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -33,8 +33,6 @@
         padding: 90px 0;
         }
 
-
-
         .navbar a:hover {
         color: #fff;
         text-shadow: 0 0 10px #0ff;
@@ -47,7 +45,7 @@
             background-color: white;
             min-height: 100vh;
         }
-        /* Flicker and Glow effect CSS (from texteffects) or something*/
+
         .text {
             font-family: monospace;
             font-size: 5rem;
@@ -56,8 +54,6 @@
             display: inline-block;
             color: #fff;
             animation: flicker 2s 3;
-
-
         }
 		.centered {
             text-align: center;
@@ -65,8 +61,8 @@
         .text-container {
         width: 100%;
         text-align: center;
-        height: 150px; /* set to match your big text's height */
-        overflow: hidden; /* prevents shadows from affecting layout */
+        height: 150px;
+        overflow: hidden;
         }
 
         .glow {
@@ -94,27 +90,9 @@
             padding: 20px;
         }
 
-        fieldset {
-            margin-top: 20px;
-            padding: 10px;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-            font-size: 1.2rem;
-        }
-
-        input {
-            width: 150px;
-            padding: 6px;
-            font-size: 1.1rem;
-            margin-top: 5px;
-        }
-        
         #cycleText {
     display: inline-block;
-    height: 5rem; /* match your h1 font-size */
+    height: 5rem;
     line-height: 5rem;
 }
 
@@ -130,50 +108,26 @@
     <a href="#contact">Contact</a>
 </nav>
 
-
-
-<!-- Tutorial:  https://texteffects.dev/posts/flickering-text-effect -->
-
 <div class="centered header-section full-width-section">
 	<h1 id="cycleText" class="text glow text-container" data-flicker="i">
 		Welcome to 7418's website
 	</h1>
 </div>
 
-<div class="white-section full-width-section"
+<div class="white-section full-width-section">
     <h2>
-        Who are we? (TEO I NEED A PICTURE) 
+        Who are we? (TEO I NEED A PICTURE)
     </h2>
 </div>
-<!-- Read up on why I don't use pseudo-elements, data attributes and the css content property, tldr it has accessibility issues. I've left the css in the code for when it is eventually supported, but for now the separate span is the most accessible option https://textlab.dev/posts/data-attributes-and-text-effects-->
-
-<!-- The div isnt really needed its just because this setup made it easier for me for editability, option without div and nested span here
-https://codepen.io/mandymichael/pen/OJGjXgO
--->
 
 <script>
 const words = ["Welcome to team 7418's website", "Welcome to the Batteries Not Included website", "Welcome to the best website", "Welcome 👍"];
-const letter = document.getElementById("flickerLetter");
-const offset = document.getElementById("flickerPosition");
-const span = document.querySelector("span");
-
 let index = 0;
 
 setInterval(() => {
     index = (index + 1) % words.length;  
     document.getElementById("cycleText").textContent = words[index];
-}, 3000); // change word every 1.5 seconds
-
-
-letter.addEventListener("input", function() {
-// For data-attributes
-  // span.setAttribute("data-flicker", this.value);
-	span.innerHTML = this.value;
-});
-
-offset.addEventListener("input", function() {
-	span.style.setProperty("--offset", this.value);
-});
+}, 3000);
 </script>
 </body>
 </html>
